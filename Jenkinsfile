@@ -5,9 +5,9 @@ pipeline{
         jdk 'jdk21'
     }
     stages{
-        stage('Build') {
+        stage('GIT Checkout') {
             steps {
-                echo 'Building...'
+                git branch: 'main', url: 'https://github.com/mjguru1996/Mission.git'
             }
         }
         stage('Test') {
