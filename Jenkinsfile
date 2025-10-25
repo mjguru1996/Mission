@@ -3,7 +3,7 @@ pipeline{
     tools{
         maven 'maven3'
         // Use JDK 11 to match project's <java.version> and avoid compiler/runtime JNI mismatches
-        jdk 'jdk11'
+        jdk 'jdk21'
     }
     stages{
         stage('GIT Checkout') {
