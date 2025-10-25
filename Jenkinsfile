@@ -10,14 +10,14 @@ pipeline{
                 git branch: 'main', url: 'https://github.com/mjguru1996/Mission.git'
             }
         }
-        stage('Test') {
+        stage('Compile') {
             steps {
-                echo 'Testing...'
+                sh 'mvn compile'
             }
         }
-        stage('Deploy') {
+        stage('Test') {
             steps {
-                echo 'Deploying...'
+                sh 'mvn test -DskipTests=true'
             }
         }
     }
